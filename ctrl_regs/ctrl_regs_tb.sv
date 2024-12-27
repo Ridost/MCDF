@@ -32,3 +32,23 @@ ctrl_regs regs(
   .slv1_en (rsp_if.slv1_en),
   .slv2_en (rsp_if.slv2_en)
 );
+
+ctrl_regs2 regs(
+  .clk_i (cr_if.clk),
+  .rstn_i (cr_if.rstn),
+  .cmd_i (ini_if.cmd),
+  .cmd_addr (ini_if.dut.cmd_addr),
+  .cmd_data_i (ini_if.dut.cmd_data_w),
+  .cmd_data_o (ini_if.dut.cmd_data_r),
+  .slv0_avail_i (rsp_if.dut.slv0_avail),
+  .slv1_avail_i (rsp_if.dut.slv1_avail),
+  .slv2_avail_i (rsp_if.dut.slv2_avail),
+  .slv0_len_o (rsp_if.dut.slv0_len),
+  .slv1_len_o (rsp_if.dut.slv1_len),
+  .slv2_len_o (rsp_if.dut.slv2_len),
+  .slv0_prio_o (rsp_if.dut.slv0_prio),
+  .slv1_prio_o (rsp_if.dut.slv1_prio),
+  .slv2_prio_o (rsp_if.dut.slv2_prio),
+  .slv0_en (rsp_if.dut.slv0_en),
+  .slv1_en (rsp_if.dut.slv1_en),
+  .slv2_en (rsp_if.dut.slv2_en)
